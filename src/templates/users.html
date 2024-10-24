@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            background: #f0f2f5; /* Light gray background */
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: #00796b; /* Teal background */
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: width 0.3s;
+        }
+
+        .sidebar:hover {
+            width: 270px;
+        }
+
+        .logo h2 {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 24px;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu {
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-link {
+            display: block;
+            color: #e0f2f1; /* Light teal color */
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.1); /* Initial shadow */
+        }
+
+        .nav-link:hover {
+            background-color: #004d40; /* Darker teal on hover */
+            transform: translateX(10px);
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Hover shadow */
+        }
+
+        .nav-link.active {
+            background-color: #004d40; /* Dark teal for active link */
+            color: #e0f2f1;
+            font-weight: bold;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* Active shadow */
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+<!--        .header {-->
+<!--            border-bottom: 2px solid #dee2e6; /* Light gray border */-->
+<!--            padding-bottom: 10px;-->
+<!--            margin-bottom: 20px;-->
+<!--            width: 100%;-->
+<!--            text-align: center;-->
+<!--        }-->
+
+<!--        .header h1 {-->
+<!--            margin: 0;-->
+<!--            font-size: 28px;-->
+<!--            color: #333;-->
+<!--        }-->
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Space between buttons */
+        }
+
+        .button {
+            background-color: #00796b; /* Teal background */
+            color: #e0f2f1; /* Light teal color */
+            border: none;
+            border-radius: 5px;
+            padding: 15px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.1); /* Initial shadow */
+        }
+
+        .button:hover {
+            background-color: #004d40; /* Darker teal on hover */
+            transform: translateY(-2px);
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Hover shadow */
+        }
+
+        .button:focus {
+            outline: none;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 200px;
+            }
+
+            .sidebar:hover {
+                width: 200px;
+            }
+
+            .main-content {
+                padding: 15px;
+            }
+
+            .nav-link {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+
+            </div>
+            <nav class="nav-menu">
+                  <a href="#" class="nav-link active">Dashboard</a>
+                <a href="users" class="nav-link">Users</a>
+                <a href="viewtraffic" class="nav-link">Traffic Statistics</a>
+                <a href="viewcongestion" class="nav-link">Congestion</a>
+                <a href="alert" class="nav-link">Alert</a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+
+            </header>
+            <div class="buttons-container">
+                <a href="viewnewrequest" class="button">New request</a>
+                <a href="viewuser" class="button">user</a>
+                <a href="viewrejecteduser" class="button">Rejected user</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

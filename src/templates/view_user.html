@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .user-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .user-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .user-info {
+            margin-bottom: 15px;
+        }
+
+        .user-info p {
+            margin: 5px 0;
+        }
+
+        .actions {
+            text-align: center;
+        }
+
+        .accept-button,
+        .reject-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .reject-button {
+            background-color: #dc3545;
+        }
+
+        .accept-button:hover,
+        .reject-button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Details</h1>
+        <div class="user-list">
+            {% for i in value %}
+            <div class="user-card">
+                <div class="user-info">
+                    <p><strong>Name:</strong> {{ i[2] }}</p>
+                    <p><strong>Email:</strong> {{ i[1] }}</p> <!-- Assuming email is at index 4 -->
+                    <p><strong>Phone no:</strong> {{ i[3] }}</p> <!-- Assuming phone no is at index 5 -->
+                    <p><strong>Rc_number:</strong> {{ i[4] }}</p> <!-- Assuming Rc_number is at index 6 -->
+                    <p><strong>Aadhar number:</strong> {{ i[5] }}</p>
+                     <p><strong>Usertype:</strong> {{ i[7] }}</p>
+                    <!-- Assuming Aadhar number is at index 7 -->
+                </div>
+                <div class="actions">
+
+                    <a class="reject-button" href="rrequest?type={{i[7]}}&id={{i[6]}}" style="text-decoration:none;">Reject</a>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

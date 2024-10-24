@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <style>
+        /* Your existing styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .user-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .user-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .user-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .user-card.first-user {
+            background: linear-gradient(135deg, #ff6f61, #de2f8f, #6b4aff);
+            color: white;
+            border: none;
+        }
+
+        .user-info {
+            margin-bottom: 15px;
+        }
+
+        .user-info p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        .user-info p strong {
+            font-size: 1.1em;
+        }
+
+        .first-user .user-info p {
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .actions {
+            text-align: center;
+        }
+
+        .accept-button,
+        .reject-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .reject-button {
+            background-color: #dc3545;
+        }
+
+        .accept-button:hover,
+        .reject-button:hover {
+            opacity: 0.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>User Details</h1>
+        <div class="user-list">
+            {% for i in value %}
+            <div class="user-card {% if loop.index == 1 %}first-user{% endif %}" role="article">
+                <div class="user-info">
+                    <p><strong>Name:</strong> {{ i[7] | default('Not Available') }}</p>
+                    <p><strong>Email:</strong> {{ i[6] | default('Not Available') }}</p>
+                    <p><strong>Phone no:</strong> {{ i[8] | default('Not Available') }}</p>
+                    <p><strong>Rc_number:</strong> {{ i[9] | default('Not Available') }}</p>
+                    <p><strong>Aadhar number:</strong> {{ i[10] | default('Not Available') }}</p>
+                    <p><strong>Time:</strong> {{ i[1] | default('Not Available') }}</p>
+                    <p><strong>Date:</strong> {{ i[2] | default('Not Available') }}</p>
+                    <p><strong>Location:</strong> {{ i[3] | default('Not Available') }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
